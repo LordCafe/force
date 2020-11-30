@@ -62,7 +62,7 @@ class TileForm extends FormBase {
 
   public function CreateFormUser(&$form, $tile){
   
-      $user = array(); //$this->getInfoUser();
+      $user =$this->getInfoUser();
       if($user){
          foreach ($user as $key => $value) {
          $form['values'][$value] = [
