@@ -1,0 +1,64 @@
+form:
+  css:
+    theme:
+      assets/css/form.css: {}
+  js: 
+    assets/js/form.js: {}
+
+editor:
+  css:
+    theme:
+      assets/css/editor.css: {}
+  js: 
+    https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js: { type: external, minified: true }
+    assets/js/editor.js: {}
+
+iframe:
+  css:
+    theme:
+      assets/css/iframe.css: {}
+  js: 
+    assets/js/iframe.js: {}
+    assets/js/mask.plugin.js: {}
+
+setup:
+  js: 
+    assets/js/setup.js: {}
+
+
+style:
+  css:
+    theme:
+      assets/css/style.css: {}
+  js:
+    assets/js/style.js: {}
+
+provider.youtube:
+  js: 
+    assets/providers/youtube/main.js: {}
+
+provider.jwplayer:
+  js: 
+    assets/providers/jwplayer/vendor.js: {}
+    assets/providers/jwplayer/main.js: {}
+
+styles.standard:
+  css:
+    theme:
+      assets/styles/standard/style.css: {}
+  js:
+    assets/styles/standard/style.js: {}
+
+styles.black:
+  css:
+    theme:
+      assets/styles/black/style.css: {}
+  js:
+    assets/styles/black/style.js: {}
+
+styles.airforce:
+  css:
+    theme:
+      assets/styles/airforce/style.css: {}
+  js:
+    assets/styles/airforce/style.js: {}

@@ -1,0 +1,54 @@
+custom_reg.sqaudron_registry_number:
+  path: '/sqaudron-registry-number'
+  defaults:
+    _controller: '\Drupal\custom_reg\Controller\OpenPopUp::openSquadronList'
+    _title: 'Squadron Numbers'
+  requirements:
+    _permission: 'access content'
+
+custom_reg.address_popup:
+  path: '/address-popup/{squadronNumber}'
+  defaults:
+    _controller: '\Drupal\custom_reg\Controller\OpenPopUp::addressPopup'
+    _title: 'Squadron Numbers'
+  requirements:
+    _permission: 'access content'
+
+custom_reg.view.address_popup:
+  path: '/view-address-popup/{uid}'
+  defaults:
+    _controller: '\Drupal\custom_reg\Controller\OpenPopUp::viewAddressPopup'
+    _title: 'Squadron Numbers'
+  requirements:
+    _permission: 'access content'
+
+custom_reg.squadron.access:
+  path: '/squadronAccess/{uid}'
+  defaults:
+    _controller: '\Drupal\custom_reg\Controller\OpenPopUp::squadronAccess'
+    _title: 'Squadron Numbers'
+  requirements:
+    _permission: 'access content'
+
+custom_reg.autocomplete.squadron:
+  path: '/squadron-list'
+  defaults:
+    _controller: '\Drupal\custom_reg\Controller\SquadronList::squadronList'
+    _format: json
+  requirements:
+    _permission: 'access content'
+
+custom_reg.autocomplete.address:
+  path: '/address-list'
+  defaults:
+    _controller: '\Drupal\custom_reg\Controller\AddressAutoComplete::addressList'
+    _format: json
+  requirements:
+    _permission: 'access content'
+
+custom_reg.migrate.zipcodes:
+  path: '/migrate-zipcodes'
+  defaults:
+    _controller: '\Drupal\custom_reg\Controller\OpenPopUp::migrateUserZipcodes'
+  requirements:
+    _permission: 'access content'

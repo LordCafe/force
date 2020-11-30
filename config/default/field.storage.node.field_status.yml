@@ -1,0 +1,30 @@
+uuid: 9031bbb2-3e3a-4962-85d9-4043fa96a727
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_status
+field_name: field_status
+entity_type: node
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 0
+      label: Created
+    -
+      value: 1
+      label: Requested
+    -
+      value: 2
+      label: Approved
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

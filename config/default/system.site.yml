@@ -1,0 +1,15 @@
+uuid: 74ecab88-3ef5-4997-9dbf-cff76ebd9960
+name: Blingby
+mail: apexashah17@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /dashboard
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+mail_notification: ''

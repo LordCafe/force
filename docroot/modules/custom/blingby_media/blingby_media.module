@@ -1,0 +1,138 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function blingby_media_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+	if (in_array($form_id, ['node_video_edit_form', 'node_video_form'])) {
+		$form['#attached']['library'][] = 'blingby_media/form';
+		$form['revision_information']['#access'] = FALSE;
+		$form['revision']['#access'] = FALSE;
+
+		$form['field_image']['#prefix'] = '<div id="media-container">';
+		$form['field_video']['#suffix'] = '</div>';
+
+		if (isset($form['actions']['delete'])) {
+			$form['actions']['delete']['#attributes']['class'][] = 'btn btn-danger';
+		}
+
+		if (isset($form['actions']['preview'])) {
+			$form['actions']['preview']['#access'] = FALSE;
+		}
+
+		$form['actions']['submit']['#submit'][] = 'blingby_media_redirect_on_save';
+    $form['actions']['submit_next'] = $form['actions']['submit'];
+    $form['actions']['submit_next']['#value'] = 'Save and continue';
+	}
+}
+
+function blingby_media_node_presave(EntityInterface $entity) {
+
+  if ($entity->getType() == 'video') {
+
+    $preview_token = $entity->get('field_preview_token')->getString();
+
+    if (empty($preview_token)) {
+      $entity->set('field_preview_token', md5(time()));
+    }
+
+    $new = $entity->get('field_video')->getValue();
+    $old_file = FALSE;
+
+    if ($entity->original) {
+      $old = $entity->original->get('field_video')->getValue();
+
+      if (!empty($old)) {
+        $old_file = $old[0]['file'];
+      }
+    }
+
+    if (isset($new[0]) && $old_file != $new[0]['file']) {
+      if ($nid = $entity->id()) {
+        $queue = \Drupal::queue('process_video');
+        $item = (object) ['nid' => $nid];
+        $queue->createItem($item);
+      }
+    }
+  }
+}
+
+function blingby_media_node_delete(EntityInterface $node) {
+  if ($node->getType() == 'video') {
+    $tileStorage = \Drupal::service('entity.manager')->getStorage('tile');
+    $tiles = $tileStorage->loadByProperties(['vid' => $node->id()]);
+
+    foreach ($tiles as $tile) {
+      $tile->delete();
+    }
+  }
+}
+
+
+function blingby_media_node_insert(EntityInterface $node) {
+  if ($node->getType() == 'video') {
+    $video = $node->get('field_video')->getValue();
+
+    if (!empty($video[0]['file'])) {
+      if ($nid = $node->id()) {
+        $queue = \Drupal::queue('process_video');
+        $item = (object) ['nid' => $nid];
+        $queue->createItem($item);
+      }
+    }
+  }
+}
+
+function blingby_media_redirect_on_save(&$form, FormStateInterface $form_state) {
+
+  $moduleHandler = \Drupal::service('module_handler');
+
+  if ($moduleHandler->moduleExists('blingby_dashboard')) {
+    $button = $form_state->getTriggeringElement();
+
+    if ($button['#value'] == 'Save') {      
+      return $form_state->setRedirect('blingby_dashboard');
+    } else {
+      $entity = $form_state->getFormObject()->getEntity();
+      return $form_state->setRedirect('blingby_media.tiles', ['node' => $entity->id()]);
+    }
+  } else {
+    return $form_state->setRedirect('<front>');
+  }
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function blingby_media_theme($existing, $type, $theme, $path) {
+  return [
+    'blingby_media_temporal' => [
+      'variables' => [
+        'image' => NULL,
+      ],
+      'template' => 'placeholder',
+    ],
+    'blingby_media_editor' => [
+      'variables' => [
+        'path'  => NULL,
+      	'form' => NULL,
+        'title' => NULL,
+        'nid' => NULL,
+        'status' => NULL,
+      ],
+      'template' => 'media-editor',
+    ],
+    'blingby_media_iframe' => [
+      'variables' => [
+        'nid' => NULL,
+        'preview' => NULL,
+      ],
+      'template' => 'media-iframe',
+    ],
+  ];
+}

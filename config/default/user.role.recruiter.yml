@@ -1,0 +1,9 @@
+uuid: 210fd889-4534-42d0-8469-0b6cc6aceff4
+langcode: en
+status: true
+dependencies: {  }
+id: recruiter
+label: Recruiter
+weight: 4
+is_admin: null
+permissions: {  }

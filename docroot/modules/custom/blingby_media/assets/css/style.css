@@ -1,0 +1,79 @@
+.field--widget-field-blingby-style {
+
+}
+
+.field--widget-field-blingby-style h3 {
+  color: #fff;
+  font-size: 16px;
+}
+
+
+.field--widget-field-blingby-style .video-style-selected {
+  margin: 12px 0;
+  border-bottom: 2px solid #fff;
+}
+
+.field--widget-field-blingby-style .video-style-selected a {
+  display: block;
+  font-size: 15px;
+  padding-bottom: 8px;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.field--widget-field-blingby-style .item-list {
+  display: none;
+}
+
+.field--widget-field-blingby-style .item-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.field--widget-field-blingby-style .item-list ul li {
+  padding: 0 20px;
+  max-width: 33.3%;
+  min-width: 33.3%;
+  background: transparent;
+}
+
+.field--widget-field-blingby-style .item-list ul li input {
+  display: none;
+}
+
+
+.field--widget-field-blingby-style .item-list ul li label {
+  text-align: center;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.field--widget-field-blingby-style .item-list ul li label .video-style-overlay {
+  position: absolute;
+  background: rgba(118,244,241,.4);
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  border-radius: 10px;
+  display: none;
+}
+
+.field--widget-field-blingby-style .item-list ul li label.selected  .video-style-overlay {
+  display: block;
+}
+
+.field--widget-field-blingby-style .item-list ul li label h5 {
+  margin: 20px 0 0;
+}
+
+.field--widget-field-blingby-style .item-list ul li label img {
+  object-fit: cover;
+  height: 194px;
+}

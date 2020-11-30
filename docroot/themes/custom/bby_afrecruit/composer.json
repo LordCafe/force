@@ -1,0 +1,10 @@
+{
+    "name": "drupal/bby_afrecruit",
+    "type": "drupal-theme",
+    "description": "SASS subtheme for Barrio Theme.",
+    "homepage": "http://drupal.org/project/bby_afrecruit",
+    "license": "GPL-2.0+",
+    "require": {
+        "drupal/bootstrap_barrio": ">=4.23.0"
+    }
+}

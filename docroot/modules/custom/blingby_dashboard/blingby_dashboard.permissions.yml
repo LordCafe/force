@@ -1,0 +1,4 @@
+access blingby dashboard:
+  title: 'Can access the Blingby Dashboard'
+  description: 'View, edit and delete their own video content.'
+  restrict access: false

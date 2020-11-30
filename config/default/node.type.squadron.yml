@@ -1,0 +1,18 @@
+uuid: 12c43c26-5172-459a-a639-3e6cea0c82f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Squadron
+type: squadron
+description: '<a class="use-ajax"  href="/sqaudron-registry-number">Find Your Squadron Registry Number Here</a>'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,44 @@
+<div class="node-video video-preview">
+
+  <div class="d-flex">
+    <div class="iframe-preview-selector">
+      <a class="btn btn-airforce mr-2" href="#" data-device="desktop">Desktop</a>
+      <a class="btn btn-airforce mr-2 grayed" href="#" data-device="tablet">Tablet</a>
+      <a class="btn btn-airforce mr-2 grayed" href="#" data-device="mobile">Mobile</a>
+    </div>
+    <div class="ml-auto">
+      <a href="#" class="btn btn-airforce"  data-toggle="modal" data-target="#preview-modal">Preview Link</a>
+      <div class="btn-group mx-4">
+        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!-- pass path instead -->
+          <img src="/modules/custom/blingby_dashboard/assets/img/menu.svg" class="img-fluid">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="{{ path('entity.node.edit_form', { 'node' : node.id})}}">Edit Video</a>
+          <a class="dropdown-item" href="{{ path('blingby_media.tiles', { 'node' : node.id})}}">Add/Edit Tiles</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="iframe-preview">
+    <!--- Video Player -->
+    <iframe src="/iframe/{{ node.id }}?preview=1" frameBorder="0" class="desktop"></iframe>
+  </div>
+
+
+  <div class="modal" tabindex="-1" role="dialog" id="preview-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p class="text-center">Here is your preview link:</p>
+          <input type="text" class="form-control" value="{{ url('<front>') }}/iframe/{{ node.id }}?preview={{node.field_preview_token.0.value}}">
+          <div class="d-flex justify-content-between mt-3">
+            <button type="button" class="btn btn-airforce" data-dismiss="modal">Close</button>
+            <button type="button" id="copy-link" class="btn btn-airforce">Copy Link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

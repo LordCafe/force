@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function blingby_forms_theme($existing, $type, $theme, $path) {
+  return [
+    'blingby_forms' => [
+      'variables' => [
+        'forms' => NULL,
+      ],
+      'template' => 'index',
+    ],
+    'blingby_forms_form' => [
+      'variables' => [
+        'form' => NULL,
+        'title' => NULL,
+      ],
+      'template' => 'bform',
+    ],
+    'blingby_forms_results' => [
+      'variables' => [
+      ],
+      'template' => 'results',
+    ],
+  ];
+}

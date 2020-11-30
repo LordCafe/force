@@ -1,0 +1,11 @@
+uuid: f95c1d3d-5b15-4e20-af43-61d3b93219ad
+langcode: en
+status: true
+dependencies: {  }
+id: squadron
+label: Squadron
+weight: 3
+is_admin: null
+permissions:
+  - 'bypass node access'
+  - 'view user mail field'

@@ -1,0 +1,14 @@
+uuid: 0dd7bf63-1e49-4876-90cb-dfcfb5efce8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.squadron
+  module:
+    - user
+id: user_add_role_action.squadron
+label: 'Add the Squadron role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: squadron

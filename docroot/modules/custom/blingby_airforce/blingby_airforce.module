@@ -1,0 +1,21 @@
+<?php 
+
+/**
+ * Implements hook_theme().
+ */
+function blingby_airforce_theme($existing, $type, $theme, $path) {
+  return [
+    'blingby_airforce_dashboard' => [
+      'variables' => [
+        'items' => NULL,
+      ],
+      'template' => 'dashboard',
+    ],
+    'blingby_airforce_single' => [
+      'variables' => [
+        'item' => NULL,
+      ],
+      'template' => 'single',
+    ],
+  ];
+}

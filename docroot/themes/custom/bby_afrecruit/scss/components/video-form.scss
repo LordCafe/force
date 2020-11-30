@@ -1,0 +1,105 @@
+.node-video-form,
+.node-video-edit-form {
+
+  padding: 0 4rem;
+
+  .vertical-tabs {
+    display: none;  
+  }
+}
+
+.nav-tabs {
+  .nav-link.active {
+    color: #fff;
+  }
+}
+
+.node--type-video .main-content {
+  padding-top: 32px;
+}
+
+.path-forms {
+  color: #fff;
+  table {
+    tr td {
+      vertical-align: middle;
+    }
+  }
+}
+
+#node-video-delete-form {
+  color: #FFFFFF;
+
+  .form-actions {
+    margin-top: 1rem;
+  }
+}
+
+
+#bform-form  {
+
+  .btn-outline {
+    width: auto;
+  }
+
+  .bform-field-container {
+    display: flex;
+    flex-wrap: wrap;
+    transition: all 0.5s;
+
+    h2 {
+      color: #fff;
+      border-top: 1px dashed;
+      margin-top: 24px;
+      padding-top: 24px;
+      width: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      small {
+        display: none;
+      }
+
+      i {
+        margin-left: auto;
+      }
+    }
+
+    &.closed {
+      max-height: 90px;
+      overflow: hidden;
+
+      h2 {
+        small {
+          display: inline-block;
+          margin-left: 8px;
+          overflow: hidden;
+          white-space: nowrap;
+          max-width: 400px;
+          text-overflow: ellipsis;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .js-form-item + .js-form-item.form-type-textfield {
+      margin-left: 32px;
+    }
+
+    .form-type-textarea,
+    .full-width {
+      width: 100%;
+    }
+
+    .btn-danger {
+      width: auto;
+      margin-top: 36px;
+      margin-left: 24px;      
+    }
+
+    .btn {
+      width: auto;
+    }
+  }
+}

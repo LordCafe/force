@@ -1,0 +1,15 @@
+blingby_airforce.analytics:
+  path: '/analytics'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_airforce\Controller\PageController::index'
+  requirements:
+    _permission: 'access airforce analytics'
+
+blingby_airforce.analytics_single:
+  path: '/analytics/{pid}'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_airforce\Controller\PageController::single'
+  requirements:
+    _permission: 'access airforce analytics'

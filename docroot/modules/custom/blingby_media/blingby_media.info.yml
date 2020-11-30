@@ -1,0 +1,6 @@
+name: Blingby Media
+description: Media customizations
+package: Blingby
+
+type: module
+core: 8.x

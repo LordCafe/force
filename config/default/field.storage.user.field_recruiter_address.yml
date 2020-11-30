@@ -1,0 +1,21 @@
+uuid: dc7b5418-d2b8-4a47-bd2d-28f47ed4dfb6
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_recruiter_address
+field_name: field_recruiter_address
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+uuid: c5eb1c21-82b2-4518-af10-56aa3993b1bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bby_afrecruit
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: bby_afrecruit_branding
+theme: bby_afrecruit
+region: header
+weight: -8
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,24 @@
+<div class="main-container">
+  <div class="video-container">
+    <div class="player-container">
+      <div id="player"></div>
+    </div>
+    <div class="video-details">
+      <div class="video-details-info">
+        <h1>{{video.title}}</h1>
+        <div class="video-description">{{video.decription}}</div>
+      </div>
+      <div class="tiles-container">
+        <div class="tiles-wrapper">
+          {{#each tiles}}
+            <div class="tile-item" data-tid="{{this.id}}">
+              <a href="#" class="tile-link">
+                <img src="{{this.original}}">
+              </a>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

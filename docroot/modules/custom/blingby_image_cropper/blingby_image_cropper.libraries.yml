@@ -1,0 +1,28 @@
+video:
+  css:
+    theme:
+      assets/css/video.css: {}
+  js: 
+    assets/js/video.js: {}
+  dependencies:
+    - blingby_image_cropper/croppie
+
+tile:
+  css:
+    theme:
+      assets/css/tile.css: {}
+  js: 
+    assets/js/tile.js: {}
+  dependencies:
+    - blingby_image_cropper/croppie
+
+
+croppie:
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.css: { type: external, minified: true }
+  js: 
+    https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.js: { type: external, minified: true }
+
+
+

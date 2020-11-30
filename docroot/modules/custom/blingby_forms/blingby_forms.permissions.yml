@@ -1,0 +1,4 @@
+access blingby forms:
+  title: 'Can access the Blingby Forms'
+  description: 'View, edit and delete their own forms.'
+  restrict access: false

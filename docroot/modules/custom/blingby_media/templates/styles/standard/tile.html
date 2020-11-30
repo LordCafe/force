@@ -1,0 +1,23 @@
+<div class="tile-current">
+  <a href="#" class="tile-close">
+    <svg viewBox="0 0 10 10" version="1.1">
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-162.000000, -366.000000)">
+          <g transform="translate(149.000000, 354.000000)">
+            <polygon points="22.3535 13.3535 21.6465 12.6465 17.9995 16.2925 14.3535 12.6465 13.6465 13.3535 17.2925 16.9995 13.6465 20.6465 14.3535 21.3535 17.9995 17.7075 21.6465 21.3535 22.3535 20.6465 18.7075 16.9995"></polygon>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </a>
+  <img class="tile-current--image" src="{{tile.original}}">
+  <h2 class="tile-current--title">{{tile.title}}</h2>
+
+  {{#if tile.description}}
+    <div class="tile-current--description">{{tile.description}}</div>
+  {{/if}}
+
+  {{#if tile.url}}
+    <a target="_blank" href="{{tile.url}}" class="tile-current--cta" data-cta-id="{{tile.id}}">{{tile.cta}}</a>
+  {{/if}}
+</div>

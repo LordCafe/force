@@ -1,0 +1,50 @@
+
+<div class="my-4 clearfix">
+  <div class="float-right">
+    <a class="btn btn-outline-light btn-sm" href="{{ path('blingby_forms.create') }}">
+      {{ 'Add Form'|t}}
+    </a>
+  </div>
+  <h1>{{ 'Forms Dashboard'|t}}</h1>
+</div>
+<div class="container">
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>{{ 'Title'|t }}</th>
+        <th>{{ 'Submissions'|t }}</th>
+        <th>{{ 'Actions'|t }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for form in forms %}
+        <tr class="text-center">
+          <td>{{ form.title}}</td>
+          <td>
+            <a class="btn btn-link" href="{{ path('blingby_forms.results', {'fid': form.id}) }}">
+              {{ 'Submissions'|t}}
+            </a>
+          </td>
+          <td>
+            <a class="btn btn-link" href="{{ path('blingby_forms.form', {'fid': form.id}) }}">
+              {{ 'Edit'|t}}
+            </a>
+            <span class="mx-2">|</span>
+            <a class="btn btn-link" href="{{ path('blingby_forms.delete', {'fid': form.id}) }}">
+              {{ 'Delete'|t}}
+            </a>
+          </td>
+        </tr>
+      {% else %}
+        <tr>
+          <td colspan="3" class="text-center">
+            <span>{{ 'You do not have any forms created' }}</span>
+            <a class="btn btn-link" href="{{ path('blingby_forms.create') }}">
+              {{ 'Add Form'|t}}
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

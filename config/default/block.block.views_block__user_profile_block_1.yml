@@ -1,0 +1,32 @@
+uuid: 368d0430-42fd-4038-9789-08bd8a7d813d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.user_profile
+  module:
+    - user
+    - views
+  theme:
+    - bby_afrecruit
+id: views_block__user_profile_block_1
+theme: bby_afrecruit
+region: primary_menu
+weight: -7
+provider: null
+plugin: 'views_block:user_profile-block_1'
+settings:
+  id: 'views_block:user_profile-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

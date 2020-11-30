@@ -1,0 +1,53 @@
+version: 2
+jobs:
+  deploytest:
+    docker:
+      - image: circleci/php:7.3-fpm
+    steps:
+      - add_ssh_keys:
+         fingerprints:
+            - "ee:f2:7c:77:ed:b2:45:ae:80:c9:06:f2:37:51:7d:da"
+      - run:
+          name: Deploy D8 to TEST.
+          command: |
+                ssh -o "StrictHostKeyChecking=no" www-data@$TEST_IP '
+                    echo "Start Deploy" &&
+                    whoami &&
+                    rm -rf newdeployment-v2 &&
+                    git clone git@github.com:Blingby/Blingby-Web-V2.git -b newtest newdeployment-v2 &&
+                    echo "Cloned" &&
+                    cd /var/www/newdeployment-v2/docroot &&
+                    php /usr/local/bin/composer install &&
+                    echo "composer install" &&
+                    cd /var/www/newdeployment-v2/docroot/themes/custom/bby_afrecruit &&
+                    /var/www/.nvm/versions/node/v10.15.3/bin/npm install &&
+                    echo "npm install" &&
+                    /var/www/.nvm/versions/node/v10.15.3/bin/npm install --global gulp-cli &&
+                    echo "gulp install" &&
+                    /var/www/.nvm/versions/node/v10.15.3/bin/npm install gulp-sass --save-dev &&
+                    echo "npm gulp-sass install" &&
+                    /var/www/.nvm/versions/node/v10.15.3/bin/npm i &&
+                    echo "npm i" &&
+                    /var/www/.nvm/versions/node/v10.15.3/bin/gulp styles &&
+                    echo "gulp styles" &&
+                    cd /var/www/ &&
+                    rsync -rza newdeployment-v2/ newtest-v2/ &&
+                    echo "rsync finished" &&
+                    rm -rf newdeployment-v2 &&
+                    cd /var/www/newtest-v2/docroot/ &&
+                    source /etc/profile2 &&
+                    drush cr &&
+                    drush cim -y && 
+                    drush updb -y && 
+                    drush cr &&
+                    echo "Deploy Finished!"
+                    '
+workflows:
+  version: 2
+  build-test-and-deploy:
+    jobs:
+      - deploytest:
+          filters:
+            branches:
+              only:
+                - newtest

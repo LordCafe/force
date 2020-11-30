@@ -1,0 +1,6 @@
+name: Blingby Airforce
+description: Airforce Analytics Dashboard
+package: Blingby
+
+type: module
+core: 8.x

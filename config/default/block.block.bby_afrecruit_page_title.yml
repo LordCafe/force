@@ -1,0 +1,27 @@
+uuid: 16aae7c5-bd00-4b00-a1e3-298089cbb2e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bby_afrecruit
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: bby_afrecruit_page_title
+theme: bby_afrecruit
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/directory\r\n/node/add/video\r\n/node/*/edit\r\n/forms/*/delete"
+    negate: false
+    context_mapping: {  }

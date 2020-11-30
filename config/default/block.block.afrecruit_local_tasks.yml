@@ -1,0 +1,22 @@
+uuid: 293325d5-bcdb-4fba-9d29-f18011492021
+langcode: en
+status: false
+dependencies:
+  theme:
+    - afrecruit
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: afrecruit_local_tasks
+theme: afrecruit
+region: ''
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

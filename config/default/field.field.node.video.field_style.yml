@@ -1,0 +1,23 @@
+uuid: 9231c99d-1db9-4fad-9e2c-c9b73d36229b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_style
+    - node.type.video
+  module:
+    - blingby_media
+id: node.video.field_style
+field_name: field_style
+entity_type: node
+bundle: video
+label: Style
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: field_blingby_style

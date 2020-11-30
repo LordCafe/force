@@ -1,0 +1,4 @@
+access airforce analytics:
+  title: 'Can access Airforce analytics'
+  description: 'View submitted data from users.'
+  restrict access: false

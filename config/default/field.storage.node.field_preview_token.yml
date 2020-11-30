@@ -1,0 +1,21 @@
+uuid: 742e68f1-99b8-4028-acfe-d9446d2644c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_preview_token
+field_name: field_preview_token
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

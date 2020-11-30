@@ -1,0 +1,7 @@
+login_redirection:
+  anonymous: null
+  authenticated: /dashboard
+  administrator: /
+  squadron: /dashboard
+  recruiter: /dashboard
+exclude_urls: ''

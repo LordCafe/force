@@ -1,0 +1,9 @@
+version: "2.1"
+services:
+  cli:
+    environment:
+      - MYSQL_DATABASE_V2=default
+      - MYSQL_PASSWORD_V2=user
+      - MYSQL_USER_V2=user
+      - MYSQL_HOST_V2=db
+      - MYSQL_PORT_V2=3306

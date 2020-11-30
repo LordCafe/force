@@ -1,0 +1,22 @@
+uuid: 30245f6a-0729-4470-9408-a105710d60b4
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - bby_afrecruit
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: bby_afrecruit_powered
+theme: bby_afrecruit
+region: top_header
+weight: -5
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

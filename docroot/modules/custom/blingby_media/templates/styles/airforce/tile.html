@@ -1,0 +1,108 @@
+<div class="tile-current">
+  <div class="tile-current-wrapper">
+    <a href="#" class="tile-close">
+      <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L6 5.5M11 10L6 5.5M6 5.5L11 1M6 5.5L1 10" stroke="white"/>
+      </svg>
+    </a>
+    
+    {{#if tile.form}}
+      {{#with tile.form}}
+        <div class="tile-form">
+          {{#each fields}}
+            <div class="tile-form-field tile-form-{{this.type}} tile-form-label-{{this.key}}" data-index="{{@index}}">
+              <label>{{this.label}}:</label>
+              {{#if_eq this.type 'text'}}
+                <input type="text" name="{{this.key}}" value="" placeholder="{{this.placeholder}}" autocomplete="off">
+              {{/if_eq}}
+
+              {{#if_eq this.type 'date'}}
+                <input type="date" name="{{this.key}}" value="" placeholder="{{this.placeholder}}" autocomplete="off">
+              {{/if_eq}}
+
+              {{#if_eq this.type 'radio'}}
+                <div class="tile-form-options">
+                  {{#each options}}
+                    <label for="{{../key}}-{{@index}}">
+                      <span></span>
+                      {{this}}
+                      <input type="radio" name="{{../key}}" value="{{this}}" id="{{../key}}-{{@index}}">
+                    </label>
+                  {{/each}}
+                </div>
+              {{/if_eq}}
+
+              {{#if_eq this.type 'select'}}
+                <select name="{{key}}">
+                  {{#each options}}
+                    <option value="{{this}}">{{this}}</option>
+                  {{/each}}
+                </select>
+              {{/if_eq}}
+            </div>
+          {{/each}}    
+          <div class="tile-form-actions">
+            <button type="button">Done</button>
+          </div>
+          <div class="tile-form-completed">
+            <div class="tile-form-completed-message">{{message}}</div>
+            <div class="tile-form-completed-icon">
+              <svg width="44" height="46" viewBox="0 0 44 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 27.5003L18.4994 44.0003L41.0493 2" stroke="#75F4F1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      {{/with}}
+    {{else if tile.video}}
+      {{#if tile.description}}
+        <div class="tile-current--description">{{{tile.description}}}</div>
+      {{/if}}
+
+      {{#with tile.video}}
+        <div class="tile-current--video">
+          <a href="/iframe/{{id}}">
+            <img src="{{image}}">
+          </a>
+        </div>
+      {{/with}}
+
+    {{else}}
+      <div class="tile-current--image">
+        <img  src="{{tile.original}}">
+      </div>
+      <div class="tile-current--details">
+        <h2 class="tile-current--title">{{tile.title}}</h2>
+        <div class="tile-current--description">
+          {{#if tile.description}}{{{tile.description}}}{{/if}}
+        </div>
+      </div>
+
+
+      {{#if_eq tile.plugin 'contact'}}
+        <div class="tile-current--contact-zipcode">
+          <label>Zip Code:</label>
+          <input type="text" name="">
+        </div>
+      {{/if_eq}}
+
+      <div class="tile-current--ctas">
+        {{#if tile.url}}
+          <a target="_blank" href="{{tile.url}}" class="tile-current--cta" data-cta-id="{{tile.id}}">{{tile.cta}}</a>
+        {{/if}}
+
+        {{#if_eq tile.plugin 'contact'}}
+          <a href="#" class="tile-current--cta tile-action-map">Map</a>
+          <a href="#" class="tile-current--cta tile-action-contact">Contact</a>
+        {{/if_eq}}
+      </div>
+    {{/if}}
+  </div>
+</div>
+
+
+
+
+
+
+

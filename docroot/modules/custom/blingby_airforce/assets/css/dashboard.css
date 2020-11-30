@@ -1,0 +1,153 @@
+.analytics-container,
+.analytics-single {
+  background: #000;
+  margin: 32px auto;
+  max-width: 1800px; 
+  padding: 24px;
+}
+
+.analytics-single-filter {
+  margin: 0 auto;
+  max-width: 1800px; 
+  padding: 24px;
+}
+
+.analytics-single-filter select {
+  min-width: 300px;
+  background: transparent!important;
+  color: #fff!important;
+  border: 1px solid #75F4F1;
+}
+
+.analytics-header {
+  color: #A3A2A2;
+  font-size: 25px;
+  line-height: 37.5px;
+}
+
+.analytics-filters a {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  margin: 0 8px;
+  height: 27px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.analytics-filters a.selected {
+  border: 3px solid #FFFFFF;
+}
+
+.analytics-filters a span {
+  width: 9px;
+  height: 27px;
+  display: inline-block;
+
+}
+
+.analytics-filters a span.green {
+  background: #2AA39C;
+}
+
+.analytics-filters a span.yellow {
+  background: #F5BC5B;
+}
+
+.analytics-filters a span.red {
+  background: #B71D3E;
+}
+
+
+.analytics-content  {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.analytics-item  {
+  margin: 8px 0; 
+}
+
+.analytics-item a {
+  padding: 0 8px;
+  color: #FFFFFF;
+  font-size: 25px;
+  line-height: 32px;
+  text-align: center;
+  width: 141px;
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+}
+
+.analytics-item a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.analytics-item-bar {
+  display: flex;
+  margin-top: 8px;
+}
+
+.analytics-item-bar div {
+  height: 27px;
+}
+
+.analytics-item-bar div.green {
+  background: #2AA39C;
+}
+
+.analytics-item-bar div.yellow {
+  background: #F5BC5B;
+}
+
+.analytics-item-bar div.red {
+  background: #B71D3E;
+}
+
+.answer-simple {
+  display: flex;
+  margin-left: 32px;
+  margin-top: 15px; 
+}
+
+.answer-simple label {
+  color: #A3A2A2;
+  text-transform: uppercase;
+  margin-right: 8px; 
+}
+
+.answer-simple div {
+  color: #FFFFFF
+}
+
+.answer-colored {
+  color: #fff;
+  padding: 4px 16px;
+  margin-bottom: 15px; 
+}
+
+.answer-green {
+  background: #2AA39C;
+}
+
+.answer-yellow {
+  background: #F5BC5B;
+}
+
+.answer-red {
+  background: #B71D3E;
+}
+
+
+.tooltip > .tooltip-inner {background-color: #FFFFFF; color: #000000;}
+.tooltip > .arrow::before {border-top-color: #FFFFFF;}
+
+
+
+
+
+
+

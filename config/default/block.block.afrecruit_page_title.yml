@@ -1,0 +1,20 @@
+uuid: b5d578e2-1972-41b3-8bb5-ef0cef9410db
+langcode: en
+status: false
+dependencies:
+  theme:
+    - afrecruit
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: afrecruit_page_title
+theme: afrecruit
+region: ''
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

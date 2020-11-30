@@ -1,0 +1,65 @@
+.filter-wrapper {
+	display: none;
+}
+
+.vertical-tabs  {
+	margin: 0 auto;
+}
+
+.vertical-tabs__menu  {
+	display: none;
+}
+
+.cropper-container {
+	margin: 0 auto;
+}
+
+#media-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+#media-container > div { 
+	width: 45%;
+}
+
+.field--widget-field-blingby-video > .form-group {
+  padding: 16px;
+  width: 300px;
+  height: 201px;
+  border: 2px solid #F0F0F0;
+  border-radius: 4px;
+  margin: 0 auto 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.field--widget-field-blingby-video fieldset > .form-select {
+  display: block;
+  width: auto;
+  margin: 0 auto;
+}
+
+.field--widget-field-blingby-video #video-value {
+  text-align: center;
+}
+
+
+.field--widget-field-blingby-video #video-value [type="file"],
+.field--widget-field-blingby-video #video-value .file {
+  display: none;
+}
+
+.video-status-info {
+  display: none;
+}
+
+.video-status-info.completed .text-danger,
+.video-status-info .text-success {
+  display: none
+}
+
+.video-status-info.completed .text-success,
+.video-status-info .text-danger {
+  display: block;
+}

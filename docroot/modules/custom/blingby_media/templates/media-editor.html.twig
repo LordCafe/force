@@ -1,0 +1,51 @@
+<div class="media-editor py-5">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          {{title}}
+          <div class="btn-group float-right">
+            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="/{{path}}/assets/img/menu.svg" class="img-fluid">
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{{ path('entity.node.canonical', { 'node' : nid})}}">Preview Video</a>
+              <a class="dropdown-item" href="{{ path('entity.node.edit_form', { 'node' : nid})}}">Edit Video</a>
+              {% if status %}
+                <a class="dropdown-item use-ajax" href="{{ path('blingby_media.publish', { 'node' : nid})}}">Unpublish Video</a>
+                <a class="dropdown-item" href="{{ path('blingby_media.code', { 'node' : nid})}}">Download Code</a>
+              {% else %}
+                <a class="dropdown-item use-ajax" href="{{ path('blingby_media.publish', { 'node' : nid})}}">Publish Video</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="player-container">
+            <div id="player"></div>
+          </div>
+          <div class="tile-wrapper">
+            <div id="tile-container">
+              <div class="tile-template tile-item">
+                <div class="tile-title tile-title-top"></div>
+                <a href="#">
+                  <div class="tile-image">
+                    <img src="" class="d-none">
+                  </div>
+                </a>
+                <div class="tile-title"></div>
+                <div class="tile-extra">
+                  <div class="tile-current-time small d-inline-block">00:00:00:00</div>
+                  <button class="btn btn-primary btn-sm">Timestamp</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      {{ form }}
+    </div>
+  </div>
+</div>

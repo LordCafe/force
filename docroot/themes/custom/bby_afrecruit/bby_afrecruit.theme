@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ */
+function bby_afrecruit_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  );
+}
+
+function bby_afrecruit_preprocess_block__system_branding_block(&$var) {
+  $route = \Drupal::routeMatch()->getCurrentRouteMatch()->getRouteObject();
+  if($route->getPath() == '/user/login' || $route->getPath() == '/user/register') {
+    $var['site_logo']= '/themes/custom/bby_afrecruit/logo_dark.svg';
+  }
+}
+
+function bby_afrecruit_preprocess_status_messages(&$variables) {
+  $variables['message_list']['status'] = [];
+}
+
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function bby_afrecruit_preprocess_html(&$variables) {
+
+  $route_match = \Drupal::routeMatch();
+
+  if ($route_match->getRouteName() == 'entity.node.canonical') {
+    if ($node = $route_match->getParameter('node')) {
+      if ($node->getType() == 'video') {
+        $variables['attributes']['class'][] = 'page-video-preview';
+      }
+    }
+  }
+}

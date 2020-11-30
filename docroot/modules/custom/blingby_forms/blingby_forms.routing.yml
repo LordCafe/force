@@ -1,0 +1,39 @@
+blingby_forms.index:
+  path: '/forms'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_forms\Controller\MainController::index'
+  requirements:
+    _permission: 'access blingby forms'
+
+blingby_forms.create:
+  path: '/forms/add'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_forms\Controller\MainController::add'
+  requirements:
+    _permission: 'access blingby forms'
+
+blingby_forms.form:
+  path: '/forms/{fid}'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_forms\Controller\MainController::single'
+  requirements:
+    _permission: 'access blingby forms'
+
+blingby_forms.delete:
+  path: '/forms/{fid}/delete'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_forms\Controller\MainController::remove'
+  requirements:
+    _permission: 'access blingby forms'
+
+blingby_forms.results:
+  path: '/forms/{fid}/results'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_forms\Controller\MainController::results'
+  requirements:
+    _permission: 'access blingby forms'

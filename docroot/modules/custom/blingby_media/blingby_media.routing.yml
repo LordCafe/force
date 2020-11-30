@@ -1,0 +1,81 @@
+blingby_media.tiles:
+  path: '/node/{node}/tiles'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_media\Controller\MediaController::index'
+  requirements:
+    _permission: 'access blingby media'
+
+blingby_media.submit:
+  path: '/node/{node}/submit'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_media\Controller\SubmitController::action'
+  requirements:
+    _permission: 'access blingby media'
+
+
+blingby_media.publish:
+  path: '/node/{node}/publish'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_media\Controller\SubmitController::publish'
+  requirements:
+    _permission: 'access blingby media'
+
+
+blingby_media.code:
+  path: '/node/{node}/code'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_media\Controller\SubmitController::code'
+  requirements:
+    _permission: 'access blingby media'
+
+blingby_media.iframe:
+  path: '/iframe/{node}'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_media\Controller\MediaController::iframe'
+  requirements:
+    _access: 'TRUE'
+
+blingby_media.scrapper:
+  path: '/api/scrapper'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_media\Controller\MediaController::scrapper'
+  requirements:
+    _access: 'TRUE'
+
+blingby_media.api:
+  path: '/api/video/{node}'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_media\Controller\MediaController::api'
+  requirements:
+    _access: 'TRUE'
+
+blingby_media.recruiter:
+  path: '/api/recruiter/{zipcode}'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_media\Controller\RecruiterController::get'
+  requirements:
+    _access: 'TRUE'
+
+blingby_media.cs:
+  path: '/coming-soon'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_media\Controller\MediaController::temporal'
+  requirements:
+    _permission: 'access blingby media'
+
+blingby_media.cs2:
+  path: '/coming-soon2'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_media\Controller\MediaController::temporal'
+  requirements:
+    _permission: 'access blingby media'

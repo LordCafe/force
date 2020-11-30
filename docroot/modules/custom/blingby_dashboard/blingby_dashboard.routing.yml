@@ -1,0 +1,7 @@
+blingby_dashboard:
+  path: '/dashboard'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_dashboard\Controller\DashboardController::index'
+  requirements:
+    _permission: 'access blingby dashboard'

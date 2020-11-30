@@ -1,0 +1,25 @@
+uuid: 27b665b8-c894-4b62-b259-86c4fc5fb61b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bby_afrecruit
+id: pagetitle
+theme: bby_afrecruit
+region: header
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user/register\r\n/user/login"
+    negate: false
+    context_mapping: {  }

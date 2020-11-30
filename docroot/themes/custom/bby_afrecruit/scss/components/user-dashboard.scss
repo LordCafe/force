@@ -1,0 +1,122 @@
+.page-view-user-dashboard,
+.path-forms {
+  .block-page-title-block {
+    border-bottom: 1px solid #FFFFFF;
+  }
+  .content {
+    width: 100%;
+    padding: 15px 0;
+  }
+  #block-bby-afrecruit-content {
+    padding-top: 2%;
+  }
+  h1 {
+    color: #FFFFFF;
+    font-size: 22px;
+  }
+  table,
+  table tr:hover,
+  table:focus {
+    color: #FFFFFF;
+    width: 90%;
+    margin: 0 auto;
+  }
+  table td {
+    border: 2px solid;
+  }
+
+  table th {
+    text-align: center;
+    border-top: 0;
+  }
+
+  table td.views-field-field-full-name,
+  table td.views-field-field-title,
+  table td.views-field-field-registery-number,
+  table td.views-field-field-zip-codes {
+    border-right: 1px solid;
+    width: 275px;
+  }
+  table thead th:nth-child(5) {
+    border-right: 0;
+  }
+  td.views-field-field-zip-codes a,
+  td.views-field-mail a,
+  table tr td a ,
+  {
+    color: #75F4F1;
+    text-decoration: underline;
+  }
+  table th.views-field-field-work-phone-number,
+  table th.views-field-mail {
+    border-right: none;
+  }
+  #views-exposed-form-user-dashboard-page-1 {
+    position: absolute;
+    top: -85px;
+    right: 5%;
+    color: #FFFFFF;
+    width: 305px;
+    margin-top: calc(0vw + 100px);
+}
+  .text-muted {
+    display: none !important;
+  }
+  #views-exposed-form-user-dashboard-page-1 input {
+    margin-left: 5px;
+    background-color: transparent;
+    width: 210px;
+    color: #FFFF;
+    ::placeholder {
+      color: #FFFFFF !important;
+    }
+  }
+  .zipcode-click {
+    cursor: pointer;
+    color: #75F4F1;
+    text-decoration: underline;
+  }
+  .zipcode {
+    width: 175px;
+    overflow-wrap: break-word;
+  }
+  ul.js-pager__items.pagination {
+    text-align: center;
+    display: inline;
+    float: left;
+    position: relative;
+    left: 50%;
+    padding: 20px 0;
+  }
+  ul.js-pager__items.pagination li.page-item {
+    float: left;
+  }
+}
+.page-view-user-dashboard {
+  .ui-dialog .ui-dialog-content {
+  width: 300px !important;
+  height: 150px !important;
+  color: #FFFF;
+  }
+  .address-link-wrapper {
+    padding: 10%;
+    text-align: justify;
+  }
+  .adress-popup {
+    background-color: #26598F;
+    border: 0;
+  }
+  .ui-dialog .ui-dialog-titlebar {
+    display: block !important;
+    border-top-left-radius: 19px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 19px;
+    border-bottom-right-radius: 0;
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    }
+    button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+      display: block;
+    }
+}

@@ -1,0 +1,14 @@
+uuid: f4622cad-dc67-41cb-a963-f2ba03eb50db
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.squadron
+  module:
+    - user
+id: user_remove_role_action.squadron
+label: 'Remove the Squadron role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: squadron

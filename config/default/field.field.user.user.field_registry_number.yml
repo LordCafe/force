@@ -1,0 +1,20 @@
+uuid: 8efb8c6e-89d1-4f40-ac4f-815e19121d98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_registry_number
+  module:
+    - user
+id: user.user.field_registry_number
+field_name: field_registry_number
+entity_type: user
+bundle: user
+label: 'Registry Number'
+description: '<a class="use-ajax"  href="/sqaudron-registry-number">Find Your Squadron Registry Number Here</a>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

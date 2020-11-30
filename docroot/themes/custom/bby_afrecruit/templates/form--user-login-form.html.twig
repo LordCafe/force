@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{% set attributes = attributes.addClass('site-branding') %}
+  {% if site_logo or site_name %}
+    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% if site_logo %}
+        <img src="/themes/custom/bby_afrecruit/logo_dark.svg"class="img-fluid d-inline-block align-top" />
+      {% endif %}
+    </a>
+  {% endif %}
+
+<div class="hero-left col-sm-12 col-md-6">
+<img src="/themes/custom/bby_afrecruit/images/us-air-force-formation-f16-fighting-falcons-tall.svg">
+</div>
+<div class="reg-form col-sm-12 col-md-6">
+<div class="reg-heading">Log In to Your Air Force Account</div>
+<div class="loginLink"><a href="/user/register">Register</a></div>
+<form{{ attributes }}>
+{{ children }}
+</form>
+</div>

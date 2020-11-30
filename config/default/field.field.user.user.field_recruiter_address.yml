@@ -1,0 +1,20 @@
+uuid: f36e0f2a-fc97-4d7e-91db-034e55853e80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_recruiter_address
+  module:
+    - user
+id: user.user.field_recruiter_address
+field_name: field_recruiter_address
+entity_type: user
+bundle: user
+label: 'Recruitment Center Address'
+description: '<a class="use-ajax" href="/address-popup">Find Your Recruitment Center Address Here</a>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

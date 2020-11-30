@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+<div class="hero-left col-sm-12 col-md-6">
+<img src="/themes/custom/bby_afrecruit/images/us-air-force-formation-f16-fighting-falcons-tall.svg">
+</div>
+<div class="reg-form col-sm-12 col-md-6">
+<div class="reg-heading">Register Your Air Force Account</div>
+<div class="loginLink"><a href="/user/login">Login</a></div>
+<form{{ attributes }}>
+{{ children }}
+</form>
+</div>

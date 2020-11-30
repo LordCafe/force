@@ -1,0 +1,22 @@
+uuid: 27ad30ce-4599-44b4-9c4c-c335ffe8f777
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - afrecruit
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: afrecruit_content
+theme: afrecruit
+region: ''
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

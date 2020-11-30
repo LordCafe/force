@@ -1,0 +1,43 @@
+uuid: 710b41ba-6276-4d2c-89b3-5d269be064dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_check_squadron
+    - field.field.user.user.field_full_name
+    - field.field.user.user.field_recruiter_address
+    - field.field.user.user.field_registry_number
+    - field.field.user.user.field_title
+    - field.field.user.user.field_work_phone_number
+    - field.field.user.user.field_zip_codes
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  field_check_squadron: true
+  field_full_name: true
+  field_recruiter_address: true
+  field_registry_number: true
+  field_title: true
+  field_work_phone_number: true
+  field_zip_codes: true
+  member_for: true

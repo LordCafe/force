@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#: exec_target = cli
+
+printf "Fix permissions\n"
+
+if [ ! -e "/var/www/docroot/sites/default/files" ]; then
+  mkdir /var/www/docroot/sites/default/files
+fi
+chmod 755 /var/www/docroot/sites/default/files
+chmod 755 /var/www/docroot/sites/default
+if [ -z $WEB_USER ]; then
+  WEB_USER=`ls -ld /var/www/docroot/sites/default/files | awk '{print $3}'`
+fi
+chown -R ${WEB_USER}:${WEB_USER} /var/www/docroot/sites/default/files &>/dev/null || true
+chown -R ${WEB_USER}:${WEB_USER} /var/www/docroot/${REL_DOCROOT} &>/dev/null || true

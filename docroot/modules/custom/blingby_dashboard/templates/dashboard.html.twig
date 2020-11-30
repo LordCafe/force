@@ -1,0 +1,79 @@
+<div class="blingby-dashboard">
+{% if 'squadron' not in roles  and 'recruiter' not in roles and 'administrator' not in roles %}
+  <a class="hidden squadron-access use-ajax" href="/squadronAccess/{{uid}}">Click Me</a>
+ {% endif %} 
+  <div class="my-4 clearfix">
+    <div class="float-right">
+      <div class="video-search">
+        <form action="/dashboard" method="GET">
+          <div class="search input-group">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button">
+                <i class="search-icon"></i>
+              </button>
+              <input type="text" class="form-control" placeholder ="Search..." name="title"/>
+            </div>
+          </div>
+          <input type="submit" value="Filter"/>
+          {% if squadronRole %}
+				<select id="names" name="recruiter">
+					<option value="">All Recruiters</option>
+					{% for key, user in users %}
+						<option {%if searchRecruiter == key %} selected {%endif%} value="{{key}}">{{user}}</option>
+					{% endfor %}
+				</select>
+			{% endif %}
+
+        </form>
+      </div>
+      <a class="btn btn-outline-light btn-sm" href="{{ path('node.add', {'node_type': 'video'}) }}">
+        {{ 'Add Video'|t}}
+      </a>
+    </div>
+    <h1>{{ 'Video Dashboard'|t}}</h1>
+  </div>
+  <div class="row">
+    {% for video in videos %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card bg-light h-100">
+          <div class="card-header">
+            {{video.title}}
+            <div class="btn-group float-right">
+              <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="/{{path}}/assets/img/menu.svg" class="img-fluid">
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="{{ path('entity.node.canonical', { 'node' : video.nid})}}">Preview Video</a>
+                <a class="dropdown-item" href="{{ path('entity.node.edit_form', { 'node' : video.nid})}}">Edit Video</a>
+                <a class="dropdown-item" href="{{ path('blingby_media.tiles', { 'node' : video.nid})}}">Add/Edit Tiles</a>
+                {% if video.published %}
+                  <a class="dropdown-item use-ajax" href="{{ path('blingby_media.publish', { 'node' : video.nid})}}">Unpublish Video</a>
+                  <a class="dropdown-item" href="{{ path('blingby_media.code', { 'node' : video.nid})}}">Download Code</a>
+                {% else %}
+                  <a class="dropdown-item use-ajax" href="{{ path('blingby_media.publish', { 'node' : video.nid})}}">Publish Video</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% if video.image %}
+            <img class="card-img-top" src="{{ video.image }}" alt="{{ video.title }}">
+          {% else %}
+            <div class="card-img-top"></div>
+          {% endif %}
+          <div class="card-footer mt-auto d-flex">
+            <small>{{video.date|date("F d, Y")}}</small>
+            <small class="ml-auto">
+              {{ 'Status'|t }}:
+              {% if video.published %}
+                {{ 'Published'|t}}
+              {% else %}
+                {{ 'Unpublished'|t}}
+              {% endif %}
+            </small>
+            {% if squadronRole %} <small>From {{video.owner}}</small> {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

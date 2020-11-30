@@ -1,0 +1,19 @@
+uuid: 0747f2ac-eee0-4f07-943c-6056ab09ada8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_latlong
+    - node.type.squadron
+id: node.squadron.field_latlong
+field_name: field_latlong
+entity_type: node
+bundle: squadron
+label: LatLong
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,30 @@
+uuid: 5eefaf3c-dfcd-453e-9ac1-ddd53dcb8c6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - bby_afrecruit
+id: mainnavigation
+theme: bby_afrecruit
+region: primary_menu
+weight: -8
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user/login\r\n/user/register"
+    negate: true
+    context_mapping: {  }

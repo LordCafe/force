@@ -1,0 +1,17 @@
+<div class="tile-current">
+  <a href="#" class="tile-close">
+    <span>x</span>
+  </a>
+  <h2 class="tile-current--title">{{tile.title}}</h2>
+  <div class="tile-current--info">
+    <img class="tile-current--image" src="{{tile.original}}">
+    {{#if tile.description}}
+      <div class="tile-current--description">{{tile.description}}</div>
+    {{/if}}
+  </div>
+  {{#if tile.url}}
+    <div class="tile-current--cta">
+      <a target="_blank" href="{{tile.url}}" class="tile-current--cta" data-cta-id="{{tile.id}}">{{tile.cta}}</a>
+    </div>
+  {{/if}}
+</div>

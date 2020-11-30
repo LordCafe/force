@@ -1,0 +1,23 @@
+uuid: a4561f64-4e05-4df3-a8eb-9c752f089540
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.squadron
+  module:
+    - text
+id: node.squadron.body
+field_name: body
+entity_type: node
+bundle: squadron
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

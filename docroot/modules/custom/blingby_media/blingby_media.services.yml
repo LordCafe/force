@@ -1,0 +1,12 @@
+services:
+  plugin.manager.blingby_video_provider:
+    class: Drupal\blingby_media\Plugin\VideoProviderManager
+    parent: default_plugin_manager
+  plugin.manager.blingby_tiles:
+    class: Drupal\blingby_media\Plugin\TilesManager
+    parent: default_plugin_manager
+  plugin.manager.blingby_video_style:
+    class: Drupal\blingby_media\Plugin\VideoStyleManager
+    parent: default_plugin_manager
+  blingby.optimizer:
+    class: Drupal\blingby_media\Optimizer

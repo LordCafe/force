@@ -1,0 +1,46 @@
+<div class="analytics-container"> 
+
+  <div class="analytics-header d-flex">
+    <div>Applicants Responses</div>
+    <div class="mx-3">TOTAL: {{items|length}}</div>
+
+    <div class="analytics-filters ml-auto">
+      <a href="#" class="selected" data-filter="all">
+        <span class="green"></span>
+        <span class="yellow"></span>
+        <span class="red"></span>
+      </a>
+      <a href="#" data-filter="green">
+        <span class="green"></span>
+        <span class="green"></span>
+        <span class="green"></span>
+      </a>
+      <a href="#" data-filter="yellow">
+        <span class="yellow"></span>
+        <span class="yellow"></span>
+        <span class="yellow"></span>
+      </a>
+      <a href="#" data-filter="red">
+        <span class="red"></span>
+        <span class="red"></span>
+        <span class="red"></span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="analytics-content d-flex">
+    {% for item in items %}
+      <div class="analytics-item{{item.class}}">
+        <a href="{{ path('blingby_airforce.analytics_single', { 'pid' : item.id}) }}">
+          <span>ID : {{item.idf}}</span>
+          <div class="analytics-item-bar">
+            <div class="green" style="width: {{item.green}}%"></div>
+            <div class="yellow" data-toggle="tooltip" data-placement="top" title="{{item.y_details}}" style="width: {{item.yellow}}%"></div>
+            <div class="red" data-toggle="tooltip" data-placement="top" title="{{item.r_details}}" style="width: {{item.red}}%"></div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>

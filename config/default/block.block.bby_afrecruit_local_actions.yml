@@ -1,0 +1,20 @@
+uuid: afe5a200-2fd2-4a12-8003-50884b94f89a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bby_afrecruit
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: bby_afrecruit_local_actions
+theme: bby_afrecruit
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

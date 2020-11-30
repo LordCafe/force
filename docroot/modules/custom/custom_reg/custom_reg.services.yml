@@ -1,0 +1,8 @@
+services:
+  custom_reg.route_subscriber:
+    class: Drupal\custom_reg\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  custom_reg.recruiter_name:
+    class: Drupal\custom_reg\Services\RecruiterName
+    arguments: []

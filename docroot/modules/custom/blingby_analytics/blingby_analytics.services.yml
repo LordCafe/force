@@ -1,0 +1,3 @@
+services:
+  blingby.analytics:
+    class: Drupal\blingby_analytics\Service

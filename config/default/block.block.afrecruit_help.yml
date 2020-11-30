@@ -1,0 +1,22 @@
+uuid: 98e32d20-905c-4ad8-bafc-419f62ce1ec3
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - afrecruit
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: afrecruit_help
+theme: afrecruit
+region: ''
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

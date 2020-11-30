@@ -1,0 +1,19 @@
+uuid: 70546c80-4d5f-4887-b7da-7685bd149247
+langcode: en
+status: true
+dependencies:
+  module:
+    - blingby_media
+    - node
+id: node.field_style
+field_name: field_style
+entity_type: node
+type: field_blingby_style
+settings: {  }
+module: blingby_media
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

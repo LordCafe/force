@@ -1,0 +1,4 @@
+access blingby media:
+  title: 'Can access Blingby video editor'
+  description: 'View, edit and delete their own video content tiles.'
+  restrict access: false

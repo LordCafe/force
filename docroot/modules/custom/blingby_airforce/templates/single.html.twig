@@ -1,0 +1,55 @@
+
+
+<div class="analytics-single-filter">
+  <div class="d-flex">
+    <div class="form-inline ml-auto">
+      <select class="form-control">
+        <option value="">SELECT VIDEO</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="analytics-single mt-0">
+  <div class="analytics-header">
+    Personal Journey
+  </div>
+</div>
+
+<div class="analytics-single-filter">
+  <div class="d-flex">
+    <div class="form-inline ml-auto">
+      <select class="form-control" id="form-selection">
+        {% for form in item.forms %}
+          <option value="{{form.id}}">{{ form.label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="analytics-single mt-0">
+  <div class="analytics-header">
+    <span class="text-white">ID {{item.idf}}</span> Responses
+  </div>
+  {% for form in item.forms %}
+    <div class="row form-detail form-{{form.id}}" {% if form.id != 1 %} style="display:none;" {% endif %}>
+      <div class="col-md-6 ">
+        {% for answer in form.simple %}
+          <div class="answer-simple">
+            <label>{{answer.text}}:</label>
+            <div>{{answer.value}}</div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="col-md-6">
+        {% for answer in form.colored %}
+          <div class="answer-colored answer-{{answer.color}}">
+            <label>{{answer.text}}:</label>
+            <div class="text-capitalize">{{answer.value}}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

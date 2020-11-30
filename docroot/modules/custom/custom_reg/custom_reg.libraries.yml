@@ -1,0 +1,6 @@
+custom_reg:
+  version: 1.x
+  dependencies:
+    - core/jquery #Just ot be save
+    - core/drupal.dialog.ajax #Required for dialogs
+    - core/jquery.form #If you also wanWt to use Ajax for form operations

@@ -1,0 +1,19 @@
+uuid: 40814c02-9316-45fb-8055-072e4b09fedc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_access
+    - node.type.video
+id: node.video.field_access
+field_name: field_access
+entity_type: node
+bundle: video
+label: Access
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

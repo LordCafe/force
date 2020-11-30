@@ -1,0 +1,21 @@
+uuid: efb49e83-c22b-43a9-9e7c-66b817be9ca9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_form
+    - node.type.video
+  module:
+    - blingby_forms
+id: node.video.field_form
+field_name: field_form
+entity_type: node
+bundle: video
+label: Form
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_blingby_form

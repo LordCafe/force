@@ -1,0 +1,6 @@
+name: Custom Registration
+description: Registration form to alter functionalities
+package: custom
+
+type: module
+core: 8.x

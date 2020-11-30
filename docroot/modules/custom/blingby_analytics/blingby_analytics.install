@@ -1,0 +1,82 @@
+<?php
+
+function blingby_analytics_schema() {
+  $schema['pixel_events'] = [
+    'description' => 'Stores events of each pixel.',
+    'fields' => [
+      'pid' => [
+        'description' => 'The {pixel}.id',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'time' => [
+        'description' => 'The unix time of the event.',
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'event' => [
+        'description' => 'The identifier of the event.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'entity_id' => [
+        'description' => 'The entity id related.',
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'entity_title' => [
+        'description' => 'The title of the entity.',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'entity_data' => [
+        'description' => 'Extra data related to the entity_id.',
+        'type' => 'text',
+      ],
+      'timestamp' => [
+        'description' => 'The unix time of the event.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ]
+    ],
+  ];
+
+  $schema['pixel_metadata'] = [
+    'description' => 'Stores pixel metadata.',
+    'fields' => [
+      'pid' => [
+        'description' => 'The {pixel}.id',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'meta_name' => [
+        'description' => 'The identifier of the metadata.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'meta_value' => [
+        'description' => 'The value of the metadata.',
+        'type' => 'text',
+      ],
+    ],
+  ];
+
+
+
+  return $schema;
+}

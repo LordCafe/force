@@ -1,0 +1,15 @@
+uuid: 6b8d694e-8760-4928-b4c2-ca3522a59bdc
+langcode: en
+status: true
+dependencies: {  }
+name: tile_thumb
+label: 'Tile Thumbnail'
+effects:
+  bf2c2516-156f-4839-ab20-aa2866962b32:
+    uuid: bf2c2516-156f-4839-ab20-aa2866962b32
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      anchor: center-center

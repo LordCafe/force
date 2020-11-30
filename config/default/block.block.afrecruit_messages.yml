@@ -1,0 +1,22 @@
+uuid: 55879741-6bd5-471b-acfd-ac1969f7b0a2
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - afrecruit
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: afrecruit_messages
+theme: afrecruit
+region: ''
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,55 @@
+uuid: fd511938-252c-4859-9ea5-15c6e66cba55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.squadron.body
+    - field.field.node.squadron.field_country
+    - field.field.node.squadron.field_latlong
+    - field.field.node.squadron.field_radius
+    - node.type.squadron
+  module:
+    - text
+    - user
+id: node.squadron.default
+targetEntityType: node
+bundle: squadron
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_country:
+    weight: 102
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_latlong:
+    weight: 104
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_radius:
+    weight: 103
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

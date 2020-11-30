@@ -1,0 +1,12 @@
+<div class="cover-image">
+  <div class="with-image" {% if image is empty %} style="display:none;" {% endif %}>
+    <img src="{{image}}" class="img-fluid">
+    <div class="with-image-over">
+      <a href="#" class="btn btn-outline-danger remove-image">{{'Delete'|t}}</a>
+    </div>
+  </div>
+  <div class="no-image" {% if image %} style="display:none;" {% endif %}>
+    <div class="cover-image-title">{{'Cover Image'|t}}</div>
+    <label for="edit-field-image-0-image" class="btn btn-outline-light">Browse</label>
+  </div>
+</div>

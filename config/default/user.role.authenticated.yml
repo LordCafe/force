@@ -1,0 +1,26 @@
+uuid: f5ef72de-1e4d-4616-9052-4defa42f0a25
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access blingby dashboard'
+  - 'access blingby media'
+  - 'access comments'
+  - 'access content'
+  - 'access kint'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'create video content'
+  - 'delete own video content'
+  - 'edit own video content'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'view own unpublished content'

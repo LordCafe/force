@@ -1,0 +1,7 @@
+blingby_analytics.trace:
+  path: '/trace/{uc}'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\blingby_analytics\Controller\TraceController::save'
+  requirements:
+    _access: 'TRUE'

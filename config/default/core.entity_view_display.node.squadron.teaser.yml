@@ -1,0 +1,36 @@
+uuid: dabe3ea4-70d5-4f7d-a39f-5d0d55bda83b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.squadron.body
+    - field.field.node.squadron.field_country
+    - field.field.node.squadron.field_latlong
+    - field.field.node.squadron.field_radius
+    - node.type.squadron
+  module:
+    - text
+    - user
+id: node.squadron.teaser
+targetEntityType: node
+bundle: squadron
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_country: true
+  field_latlong: true
+  field_radius: true
