@@ -60,18 +60,40 @@ class TileForm extends FormBase {
 
 
 
-  public function CreateFormUser(&$form){
-      
-      $user = $this->getInfoUser();
-
-      foreach ($user as $key => $value) {
-         $form['values']['users'][$value] = [
+  public function CreateFormUser(&$form, $tile){
+  
+      $user = array(); //$this->getInfoUser();
+      if($user){
+         foreach ($user as $key => $value) {
+         $form['values'][$value] = [
           '#type' => 'textfield',
           '#title' => $key,
           '#default_value' => $value,
          // '#required' => TRUE,
         ];
+
       }
+      }else{
+
+      $keys = array('mail' =>'email', 'field_work_phone_number'=>'call','field_recruiter_address  '=>'map');
+       foreach ($keys as $key => $value) {
+         $form['values'][$value] = [
+          '#type' => 'textfield',
+          '#title' => $value,
+          '#default_value' => '',
+         // '#required' => TRUE,
+        ];
+
+      }
+
+
+      }
+
+        
+
+      
+     
+
 
        return $form;
   }
@@ -79,14 +101,14 @@ class TileForm extends FormBase {
   public function getInfoUser(){
   // Load the current user.
   $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-  $default_user_fields  = \Drupal::service('entity_field.manager')->getFieldDefinitions('user', 'user');
-  $keys = array_keys($default_user_fields);
 
+  //$default_user_fields  = \Drupal::service('entity_field.manager')->getFieldDefinitions('user', 'user');
+  $keys = array('mail' =>'email', 'field_work_phone_number'=>'call','field_recruiter_address'=>'map');
     $data_user = array();
     foreach ( $keys as $key => $value) {
-      $data_user[$value] =  $user->get($value)->value;
+      $data_user[$value] =  $user->get($key)->value;
     }
-//print_r($data_user); exit;
+
   return $data_user;
 
 
@@ -97,7 +119,7 @@ class TileForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, $video = false) {
-    
+  
     $plugins = $this->tilesManager->getDefinitions();
     $options = array_combine(array_keys($plugins), array_column($plugins, 'label'));
     $tile = FALSE;
@@ -108,6 +130,7 @@ class TileForm extends FormBase {
       if ($values['id']) {
 
         $tile = $this->tilesStorage->load($values['id']);
+      
       }
     }
 
@@ -224,7 +247,7 @@ class TileForm extends FormBase {
       $form['values']['title'] = [
         '#type' => 'textfield',
         '#title' => 'Title',
-        '#default_value' =>  $default_plugin,
+       '#default_value' => $tile? $tile['title']: '',
         '#required' => TRUE,
       ];
 
@@ -317,7 +340,16 @@ class TileForm extends FormBase {
 
 
         if($default_plugin === 'contact'){
-            $this->CreateFormUser($form);
+
+            $form['values']['type_video'] = array(
+'#type' => 'radios',
+'#title' => t('Type of video'),
+/*'#description' => t('Select a method for deleting annotations.'),*/
+'#options' => array('general' => 'Air Force General video', 'private' => 'Personal video'),
+'#default_value' => (isset(  $tile['video_type'] ) ) ?  $tile['video_type'] : 'general' ,
+'#required' => TRUE,
+);
+            $this->CreateFormUser($form ,  $tile);
         }
       
         $form['values']['condition_value'] = [
@@ -393,6 +425,7 @@ class TileForm extends FormBase {
 
   public function save(array $form, FormStateInterface $form_state) {
     $svalues =  $values = $form_state->getValues();
+
     $id = $values['id']? : 0;
     $vid = $values['vid'];
     $plugin_id = $values['plugin'];
